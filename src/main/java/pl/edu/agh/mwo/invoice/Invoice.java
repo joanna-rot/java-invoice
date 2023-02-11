@@ -2,29 +2,33 @@ package pl.edu.agh.mwo.invoice;
 
 import java.math.BigDecimal;
 import java.util.Collection;
+import java.util.Map;
 
 import pl.edu.agh.mwo.invoice.product.Product;
 
 public class Invoice {
-    private Collection<Product> products;
+//    private Collection<Product> products;
 
-    public void addProduct(Product product) {
-        // TODO: implement
-    }
+    private Map<Product, Integer> products;
+
+    //public void addProduct(Product product) {}
 
     public void addProduct(Product product, Integer quantity) {
-        // TODO: implement
+        this.products.put(product, quantity);
+        for (int i=0; i< quantity; i++) {
+//            products.add(product);
+        }
     }
 
     public BigDecimal getSubtotal() {
-        return null;
+        return BigDecimal.ZERO;
     }
 
     public BigDecimal getTax() {
-        return null;
+        return BigDecimal.ZERO;
     }
 
     public BigDecimal getTotal() {
-        return null;
+        return BigDecimal.ZERO;
     }
 }
